@@ -1,6 +1,6 @@
 # How to set up Arch and Manjaro machines
 
-Please follow the steps from [Prerequisites](../README.md#prerequisites) prior to executing the commands below.
+Please follow the steps from [Prerequisites](../README.md#prerequisites) prior to executing the commands below and execute [`install-4server-all.yaml`](../06-custom-roles#run-playbook) playbook from [Example 6](../06-custom-roles).
 
 Besides, install all necessary requirements by executing the command:
 ```
