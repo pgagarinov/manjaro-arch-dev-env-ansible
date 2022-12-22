@@ -34,3 +34,10 @@ and after this run the whole playbook without any additional options by
 ```
 ansible-playbook -i ./inventory -v ./playbooks/install-4server-all.yml
 ```
+
+For user-side scripts please run
+
+```
+ansible-playbook -i ./inventory -v ./playbooks/sysadmin-users.yaml
+ansible-playbook -i ./inventory -v ./playbooks/install-server-stuff-users.yaml
+```
