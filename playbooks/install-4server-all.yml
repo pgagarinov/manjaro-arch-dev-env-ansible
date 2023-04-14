@@ -55,10 +55,15 @@
       ansible.builtin.package_facts:
         manager: auto
 
-    - name: Set facts on yay and Manjaro
+    - name: Check "/etc/os-release" for presence of "Manjaro" string
+      ansible.builtin.shell: "grep -q 'Manjaro' /etc/os-release && echo 'true' || echo 'false'"
+      register: result
+      changed_when: false
+    
+    - name: set facts on yay and Manjaro
       ansible.builtin.set_fact:
         is_yay: "{{ 'yay' in ansible_facts.packages }}"
-        is_manjaro: '{{ ansible_facts["kernel"] is search("MANJARO") }}'
+        is_manjaro: "{{ result.stdout == 'true' }}"
 
     - name: Configure swappiness
       become: true

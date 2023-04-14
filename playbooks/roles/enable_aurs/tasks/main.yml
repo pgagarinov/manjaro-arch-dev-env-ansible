@@ -17,6 +17,12 @@
         - ./yay-bin
         - ./yay
 
+    - name: Install git via pacman
+      become: true
+      community.general.pacman:
+        name: git
+        state: present
+
     - name: Clone yay-bin
       become: false
       ansible.builtin.git: # noqa: git-latest

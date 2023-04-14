@@ -1,0 +1,3 @@
+---
+- name: Run the main playbook
+  import_playbook: ../../playbooks/install-4server-all.yml

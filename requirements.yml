@@ -1,4 +1,6 @@
 ---
+roles:
+  - name: bodsch.snapd
 collections:
   - name: kewlfft.aur
   - name: ansible.posix
