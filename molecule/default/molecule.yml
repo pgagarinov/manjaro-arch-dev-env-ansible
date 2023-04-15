@@ -11,9 +11,16 @@ platforms:
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     privileged: true
     pre_build_image: true
+    ulimits:
+      - nofile:65535:65535
     groups: 
       - archs
 provisioner:
   name: ansible
+  inventory:
+    host_vars:
+      # setting for the platform instance named 'cdp-arch-ansible'
+      cdp-arch-ansible:
+        ansible_user: ansible
 verifier:
   name: ansible
