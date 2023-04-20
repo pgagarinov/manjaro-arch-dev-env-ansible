@@ -18,6 +18,19 @@ platforms:
 provisioner:
   name: ansible
   inventory:
+    group_vars:
+      archs:
+        components_to_install:
+          - nodejs
+          - jdk8-maven
+          - jdk11
+          - aws
+          - micromamba
+          - docker
+          - docker-compose
+          - rust
+          - server-extras
+          - julia
     host_vars:
       # setting for the platform instance named 'cdp-arch-ansible'
       cdp-arch-ansible:

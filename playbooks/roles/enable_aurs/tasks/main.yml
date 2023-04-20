@@ -36,17 +36,19 @@
         cmd: nproc
       register: nproc_output
 
-    # we do not need to use multi-threading because we install yay from 
-    # binaries but we add MAKEFLAGS anyway just in case we need this later
-    # (for instance, if we decide to install yay from sources)
+    - name: Make makepkg use all processor cores 
+      become: true
+      lineinfile:
+        path: /etc/makepkg.conf
+        regexp: 'MAKEFLAGS='
+        line: 'MAKEFLAGS=-j{{ nproc_output.stdout | trim }}'
+
     - name: Build yay from binaries
       become: false
       ansible.builtin.command:
         cmd: makepkg -si --noconfirm
         chdir: ./yay-bin
         creates: /usr/bin/yay
-      environment:
-        MAKEFLAGS: "-j{{ nproc_output.stdout | trim }}" # just in case
 
     - name: Remove directories after building yay from binaries
       ansible.builtin.file:

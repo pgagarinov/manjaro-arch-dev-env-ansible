@@ -20,6 +20,15 @@
     groups: docker
     append: true
 
+- name: Create /etc/docker folder if doesn't exist
+  become: true
+  ansible.builtin.file:
+    path: /etc/docker
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Create docker config
   become: true
   ansible.builtin.template:
