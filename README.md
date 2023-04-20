@@ -1,6 +1,7 @@
-(CI)[https://github.com/Alliedium/manjaro-arch-dev-env-ansible/actions/workflows/ci.yml/badge.svg]
+# Manjaro/Arch Linux for Software Development, DevOps and ML
+Rev up your productivity with ease! Transform your Manjaro or Arch Linux into a powerhouse for Software Development, DevOps, and Machine Learning with our streamlined Ansible playbook(s).
 
-# How to set up Arch and Manjaro machines
+![molecule test](https://github.com/Alliedium/manjaro-arch-dev-env-ansible/actions/workflows/ci.yml/badge.svg)
 
 Please follow the steps from [Prerequisites](../README.md#prerequisites) prior to executing the commands below and execute [`install-4server-all.yaml`](../06-custom-roles#run-playbook) playbook from [Example 6](../06-custom-roles).
 
