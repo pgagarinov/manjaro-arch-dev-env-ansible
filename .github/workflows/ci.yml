@@ -8,17 +8,12 @@ name: CI
       - master
 
 jobs:
-
-  test:
-    name: Molecule
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v2
-
-      - name: Run Molecule tests.
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
         uses: robertdebock/molecule-action@5.0.2
-        run: molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
