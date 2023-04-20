@@ -1,4 +1,4 @@
-https://github.com/Alliedium/manjaro-arch-dev-env-ansible/actions/workflows/ci.yml/badge.svg
+(CI)[https://github.com/Alliedium/manjaro-arch-dev-env-ansible/actions/workflows/ci.yml/badge.svg]
 
 # How to set up Arch and Manjaro machines
 
