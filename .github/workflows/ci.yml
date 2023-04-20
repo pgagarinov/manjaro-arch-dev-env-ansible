@@ -16,15 +16,8 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install ansible molecule molecule-docker docker yamllint ansible-lint
-
       - name: Run Molecule tests.
+        uses: robertdebock/molecule-action@5.0.2
         run: molecule test
         env:
           PY_COLORS: '1'
